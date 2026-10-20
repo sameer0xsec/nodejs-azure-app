@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Weather Dashboard</h1>
+      <p>Check current weather and a 5-day forecast for any city.</p>
+    </header>
+
+    <main class="container">
+      <section class="card search-card" aria-labelledby="search-heading">
+        <h2 id="search-heading">Find a city</h2>
+        <form id="search-form" class="search-form" novalidate>
+          <label for="city-input">City name</label>
+          <div class="search-row">
+            <input
+              id="city-input"
+              name="city"
+              type="text"
+              autocomplete="off"
+              placeholder="e.g., London"
+              required
+            />
+            <button type="submit">Search</button>
+          </div>
+          <p id="field-error" class="field-error" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <section id="status-panel" class="card status-panel" aria-live="polite">
+        <p id="status-message">Search for a city to see weather details.</p>
+      </section>
+
+      <section id="results" class="results" hidden>
+        <article class="card current-weather" aria-labelledby="location-title">
+          <header class="current-header">
+            <h2 id="location-title"></h2>
+            <p id="weather-condition" class="weather-condition"></p>
+          </header>
+          <dl class="weather-grid">
+            <div>
+              <dt>Temperature</dt>
+              <dd id="temperature"></dd>
+            </div>
+            <div>
+              <dt>Feels like</dt>
+              <dd id="apparent-temperature"></dd>
+            </div>
+            <div>
+              <dt>Humidity</dt>
+              <dd id="humidity"></dd>
+            </div>
+            <div>
+              <dt>Wind</dt>
+              <dd id="wind"></dd>
+            </div>
+            <div>
+              <dt>Sunrise</dt>
+              <dd id="sunrise"></dd>
+            </div>
+            <div>
+              <dt>Sunset</dt>
+              <dd id="sunset"></dd>
+            </div>
+          </dl>
+        </article>
+
+        <section class="card forecast" aria-labelledby="forecast-title">
+          <h2 id="forecast-title">5-Day Forecast</h2>
+          <ul id="forecast-list" class="forecast-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
